@@ -17,7 +17,7 @@ func (marshaler *BooleanArgumentMarshaler) Marshal() error {
 	var result bool
 
 	if result, err = strconv.ParseBool(marshaler.valueToMarshal); err != nil {
-		return NewArgumentException(INVALID_BOOLEAN, marshaler.argumentID, marshaler.valueToMarshal)
+		return InvalidBooleanException(marshaler.argumentID, marshaler.valueToMarshal)
 	}
 
 	marshaler.value = result
