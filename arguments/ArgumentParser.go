@@ -84,7 +84,7 @@ func (argumentParser *ArgumentParser) parseSchemaElement(element string, argumen
 		return nil
 	}
 
-	return NewArgumentException(INVALID_ARGUMENT_FORMAT, argumentID, argumentType)
+	return InvalidArgumentFormatException(argumentValue)
 }
 
 func (argumentParser *ArgumentParser) validateSchemaArgumentID(argumentID string) error {
