@@ -17,7 +17,7 @@ func (marshaler *FloatArgumentMarshaler) Marshal() error {
 	var result float64
 
 	if result, err = strconv.ParseFloat(marshaler.valueToMarshal, 64); err != nil {
-		return NewArgumentException(INVALID_FLOAT, marshaler.argumentID, marshaler.valueToMarshal)
+		return InvalidFloatException(marshaler.argumentID, marshaler.valueToMarshal)
 	}
 
 	marshaler.value = result
