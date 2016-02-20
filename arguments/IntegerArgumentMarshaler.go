@@ -17,7 +17,7 @@ func (marshaler *IntegerArgumentMarshaler) Marshal() error {
 	var result int
 
 	if result, err = strconv.Atoi(marshaler.valueToMarshal); err != nil {
-		return NewArgumentException(INVALID_INTEGER, marshaler.argumentID, marshaler.valueToMarshal)
+		return InvalidIntegerException(marshaler.argumentID, marshaler.valueToMarshal)
 	}
 
 	marshaler.value = result
