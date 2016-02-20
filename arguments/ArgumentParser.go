@@ -93,7 +93,7 @@ func (argumentParser *ArgumentParser) validateSchemaArgumentID(argumentID string
 	ch, _ = utf8.DecodeRuneInString(argumentID)
 
 	if !unicode.IsLetter(ch) {
-		return NewArgumentException(INVALID_ARGUMENT_NAME, argumentID, "")
+		return InvalidArgumentNameException(argumentID)
 	}
 
 	return nil
