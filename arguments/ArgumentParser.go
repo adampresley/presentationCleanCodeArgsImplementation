@@ -34,7 +34,7 @@ func (argumentParser *ArgumentParser) parseSchema(schema string) error {
 
 	for index, element := range schemaElements {
 		if index >= len(argumentParser.arguments) {
-			return NewArgumentException(ARGUMENT_COUNT_MISMATCH, "", "")
+			return ArgumentCountMismatchException()
 		}
 
 		argumentValue = argumentParser.arguments[index]
